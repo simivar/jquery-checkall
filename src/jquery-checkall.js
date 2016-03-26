@@ -1,10 +1,3 @@
-/*!
- * jQuery checkAll Plugin - v0.0.1 - 2016/01/26
- *
- * https://github.com/simivar/jquery-checkall
- *
- * Copyright (c) 2016 simivar; Licensed MIT
- */
 (function ($)
 {
 	"use strict";
@@ -18,7 +11,7 @@
 		},
 		check: function(value)
 		{
-            return check(this, value);
+			return check(this, value);
 		}
 	});
 
@@ -38,34 +31,30 @@
 		}, options);
 
 		if (settings.target === null && typeof settings.target === "object") {
-			throw new Error( "checkAll: element has no target specified." );
+			throw new Error("checkAll: element has no target specified." );
 		}
-        
-        if (settings.uniform) {
-            if (!("uniform" in jQuery(this))) {
-                throw new Error( "checkAll: setting 'uniform' set to 'true' yet can not locate uniformjs.")
-            }
-        }
-        
-        if (settings.icheck) {
-            if (!("icheck" in jQuery(this))) {
-                throw new Error( "checkAll: setting 'icheck' set to 'true' yet can not locate iCheck.")
-            }
-        }
+
+		if (settings.uniform && !jQuery().uniform) {
+			throw new Error("checkAll: setting 'uniform' set to 'true' yet can not locate uniformjs.");
+		}
+
+		if (settings.icheck && !jQuery().iCheck) {
+			throw new Error("checkAll: setting 'icheck' set to 'true' yet can not locate iCheck.");
+		}
 
 		var $elem = $(elem),
-			$target = $(settings.target);
+				$target = $(settings.target);
 
 		function refreshPlugins()
 		{
 			if (settings.uniform) {
-                $.uniform.update( $target );
-                $.uniform.update( $elem );
+				$.uniform.update( $target );
+				$.uniform.update( $elem );
 			}
 
 			if (settings.icheck) {
-                $target.iCheck( 'update' );
-                $elem.iCheck( 'update' );
+				$target.iCheck( 'update' );
+				$elem.iCheck( 'update' );
 			}
 		}
 
@@ -107,33 +96,21 @@
 			refreshPlugins();
 		});
 	}
-    
-    function check(elem, value){
-        var $elem = $(elem);
-        
-        if(typeof value === typeof undefined){
-            if(elem.length > 1){
-                return false;
-            }
-            
-            if ("prop" in jQuery(this)) {
-                return $elem.prop('checked');
-            }
-            
-            if ("attr" in jQuery(this)) {
-                return $elem.attr('checked');
-            }
-        } else {
-            if ("prop" in jQuery(this)) {
-                $elem.prop('checked', value);
-            }
-            
-            if ("attr" in jQuery(this)) {
-                $elem.attr('checked', value);
-            }
-                
-            return $elem;
-        }
-    }
+
+	function check(elem, value){
+		var $elem = $(elem);
+
+		if(typeof value === typeof undefined){
+			if(elem.length > 1){
+				return false;
+			}
+
+			return $elem.prop('checked');
+		} else {
+			$elem.prop('checked', value);
+
+			return $elem;
+		}
+	}
 
 })(jQuery);

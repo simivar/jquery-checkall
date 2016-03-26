@@ -1,49 +1,50 @@
 {
- "name": "jquery-checkall",
- "description": "Check all checkboxes with one checkbox",
- "keywords": [
-  "checkbox",
-  "check all",
-  "check"
- ],
- "licenses": [
-  {
-   "type": "MIT",
-   "url": "http://www.opensource.org/licenses/mit-license.php"
-  }
- ],
- "version": "0.0.1",
- "main": "dist/jquery.checkall.js",
- "author": {
-  "name": "simivar",
-  "email": "simivar@gmail.com"
- },
- "repository": {
-  "type": "git",
-  "url": "https://github.com/simivar/jquery-checkall.git"
- },
-  "bugs": {
-    "url": "https://github.com/victorjonsson/jQuery-Form-Validator/issues"
+  "name": "jquery-checkall",
+  "description": "Check all checkboxes with one checkbox",
+  "keywords": [
+	"checkbox",
+	"check all",
+	"check"
+  ],
+  "licenses": [
+	{
+	  "type": "MIT",
+	  "url": "http://www.opensource.org/licenses/mit-license.php"
+	}
+  ],
+  "version": "0.0.2",
+  "main": "dist/jquery.checkall.js",
+  "author": {
+	"name": "simivar",
+	"email": "simivar@gmail.com"
   },
- "peerDependencies": {
-  "jquery": "*"
- },
- "devDependencies": {
-  "grunt": "~0.4.5",
-  "grunt-cli": "~0.1.13",
-  "grunt-contrib-concat": "~0.5.1",
-  "grunt-contrib-clean": "~0.6.0",
-  "grunt-contrib-copy": "~1.0.0",
-  "grunt-contrib-uglify": "~0.9.1",
-  "grunt-contrib-watch": "~0.6.1",
-  "grunt-contrib-jshint": "~0.11.2",
-  "jquery": "^2.1.4",
-  "load-grunt-tasks": "~3.1.0"
- },
+  "homepage": "http://simivar.github.io/jquery-checkall/",
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/simivar/jquery-checkall.git"
+  },
+  "bugs": {
+	"url": "https://github.com/victorjonsson/jQuery-Form-Validator/issues"
+  },
+  "peerDependencies": {
+	"jquery": "*"
+  },
+  "devDependencies": {
+	"grunt": "~0.4.5",
+	"grunt-cli": "~0.1.13",
+	"grunt-contrib-concat": "~0.5.1",
+	"grunt-contrib-clean": "~0.6.0",
+	"grunt-contrib-copy": "~1.0.0",
+	"grunt-contrib-uglify": "~0.9.1",
+	"grunt-contrib-watch": "~0.6.1",
+	"grunt-contrib-jshint": "~0.11.2",
+	"jquery": "^2.1.4",
+	"load-grunt-tasks": "~3.1.0"
+  },
   "dependencies": {
-    "jquery": ">1.7.0"
+	"jquery": ">1.7.0"
   },
   "scripts": {
-    "test": "grunt test"
+	"test": "grunt test"
   }
 }

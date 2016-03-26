@@ -4,13 +4,25 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
+		meta: {
+			banner: "/** File generated -- do not modify\n" +
+			" *  <%= (pkg.title || pkg.name).toUpperCase() %>\n" +
+			" *\n" +
+			" *  @version <%= pkg.version %>\n" +
+			" *  @website <%= pkg.homepage %>\n" +
+			" *  @author <%= pkg.author.name %>\n" +
+			" *  @license <%= pkg.license %>\n" +
+			" */\n"
+		},
+
 		clean: [
 			'dist'
 		],
 
 		concat: {
 			options: {
-				separator: ';'
+				separator: ';',
+				banner: "<%= meta.banner %>"
 			},
 			dist: {
 				src: ['src/*.js'],
@@ -20,7 +32,7 @@ module.exports = function(grunt) {
 
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+				banner: "<%= meta.banner %>"
 			},
 			dist: {
 				files: {
