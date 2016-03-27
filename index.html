@@ -37,64 +37,67 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<h1>Options</h1>
-			<table class="table table-bordered">
-				<thead>
-				<tr>
-					<th width="15%">option</th>
-					<th width="15%">value</th>
-					<th width="15%">default</th>
-					<th>description</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>target <span class="text-danger bold">(required)</span></td>
-					<td>string</td>
-					<td>null</td>
-					<td>A string containing a selector expression for targeted checkboxes</td>
-				</tr>
-				<tr>
-					<td>uniform</td>
-					<td>boolean</td>
-					<td>false</td>
-					<td>Whether or not <a href="https://github.com/pixelmatrix/uniform">UniformJS</a> is used to style
-						targeted checkboxes
-					</td>
-				</tr>
-				<tr>
-					<td>icheck</td>
-					<td>boolean</td>
-					<td>false</td>
-					<td>Whether or not <a href="https://github.com/fronteed/icheck">iCheck</a> is used to style targeted
-						checkboxes
-					</td>
-				</tr>
-				<tr>
-					<td>onAnyTargetChecked</td>
-					<td>function</td>
-					<td>function (count){}</td>
-					<td>Callback which is fired when more then zero target elements are checked</td>
-				</tr>
-				<tr>
-					<td>onNoTargetChecked</td>
-					<td>function</td>
-					<td>function (){}</td>
-					<td>Callback which is fired when no target elements are checked</td>
-				</tr>
-				<tr>
-					<td>onTargetClick</td>
-					<td>function</td>
-					<td>function (target){}</td>
-					<td>Callback which is fired when target element is clicked</td>
-				</tr>
-				<tr>
-					<td>onElementClick</td>
-					<td>function</td>
-					<td>function (elem){}</td>
-					<td>Callback which is fired when element is clicked</td>
-				</tr>
-				</tbody>
-			</table>
+
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<thead>
+					<tr>
+						<th width="15%">option</th>
+						<th width="15%">value</th>
+						<th width="15%">default</th>
+						<th>description</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>target <span class="text-danger bold">(required)</span></td>
+						<td>string</td>
+						<td>null</td>
+						<td>A string containing a selector expression for targeted checkboxes</td>
+					</tr>
+					<tr>
+						<td>uniform</td>
+						<td>boolean</td>
+						<td>false</td>
+						<td>Whether or not <a href="https://github.com/pixelmatrix/uniform">UniformJS</a> is used to style
+							targeted checkboxes
+						</td>
+					</tr>
+					<tr>
+						<td>icheck</td>
+						<td>boolean</td>
+						<td>false</td>
+						<td>Whether or not <a href="https://github.com/fronteed/icheck">iCheck</a> is used to style targeted
+							checkboxes
+						</td>
+					</tr>
+					<tr>
+						<td>onAnyTargetChecked</td>
+						<td>function</td>
+						<td>function (count){}</td>
+						<td>Callback which is fired when more then zero target elements are checked</td>
+					</tr>
+					<tr>
+						<td>onNoTargetChecked</td>
+						<td>function</td>
+						<td>function (){}</td>
+						<td>Callback which is fired when no target elements are checked</td>
+					</tr>
+					<tr>
+						<td>onTargetClick</td>
+						<td>function</td>
+						<td>function (target){}</td>
+						<td>Callback which is fired when target element is clicked</td>
+					</tr>
+					<tr>
+						<td>onElementClick</td>
+						<td>function</td>
+						<td>function (elem){}</td>
+						<td>Callback which is fired when element is clicked</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 
@@ -111,7 +114,7 @@
 			<h2>Basic usage</h2>
 		</div>
 
-		<div class="col-xs-6">
+		<div class="col-sm-6 col-xs-12">
 			<div data-example-id="togglable-tabs" class="bs-example bs-example-tabs">
 				<ul role="tablist" class="nav nav-tabs" id="myTabs">
 					<li class="active" role="presentation">
@@ -160,7 +163,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-6">
+		<div class="col-sm-6 col-xs-12">
 			<table class="table table-bordered">
 				<tr>
 					<th style="width: 5%;"><input type="checkbox" id="element" /></th>
@@ -188,7 +191,7 @@
 			<h2>Uniform usage</h2>
 		</div>
 
-		<div class="col-xs-6">
+		<div class="col-sm-6 col-xs-12">
 			<table class="table table-bordered">
 				<tr>
 					<th style="width: 5%;"><input type="checkbox" id="element-uniform" /></th>
@@ -207,7 +210,7 @@
 				</tr>
 			</table>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-sm-6 col-xs-12">
 			<div data-example-id="togglable-tabs" class="bs-example bs-example-tabs">
 				<ul role="tablist" class="nav nav-tabs" id="myTabs-uniform">
 					<li class="active" role="presentation">
@@ -265,7 +268,7 @@
 			<h2>iCheck usage</h2>
 		</div>
 
-		<div class="col-xs-6">
+		<div class="col-sm-6 col-xs-12">
 			<div data-example-id="togglable-tabs" class="bs-example bs-example-tabs">
 				<ul role="tablist" class="nav nav-tabs" id="myTabs-icheck">
 					<li class="active" role="presentation">
@@ -315,7 +318,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-6">
+		<div class="col-sm-6 col-xs-12">
 			<table class="table table-bordered">
 				<tr>
 					<th style="width: 5%;"><input type="checkbox" id="element-icheck" /></th>
