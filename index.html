@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery checkAll docs</title>
+	<meta name="description" content="One checkbox to rule them all - simple jQuery plugin to check all the checkboxes" />
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/themes/default/css/uniform.default.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/blue.css" rel="stylesheet">
+	<link href="css/jquery-checkall.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<div class="jumbotron mastahead" id="header">
+	<div class="container">
+		<h1>jQuery checkAll</h1>
+
+		<p>One checkbox to rule them all</p>
+
+		<p><a class="btn btn-outline btn-lg" href="https://github.com/simivar/jquery-checkall/" target="_blank"><i
+				class="fa fa-github"></i> GitHub</a></p>
+
+		<p class="promotion">Version: 0.0.2</p>
+	</div>
+</div>
+
+<div class="container" id="main">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Options</h1>
+			<table class="table table-bordered">
+				<thead>
+				<tr>
+					<th width="15%">option</th>
+					<th width="15%">value</th>
+					<th width="15%">default</th>
+					<th>description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>target <span class="text-danger bold">(required)</span></td>
+					<td>string</td>
+					<td>null</td>
+					<td>A string containing a selector expression for targeted checkboxes</td>
+				</tr>
+				<tr>
+					<td>uniform</td>
+					<td>boolean</td>
+					<td>false</td>
+					<td>Whether or not <a href="https://github.com/pixelmatrix/uniform">UniformJS</a> is used to style
+						targeted checkboxes
+					</td>
+				</tr>
+				<tr>
+					<td>icheck</td>
+					<td>boolean</td>
+					<td>false</td>
+					<td>Whether or not <a href="https://github.com/fronteed/icheck">iCheck</a> is used to style targeted
+						checkboxes
+					</td>
+				</tr>
+				<tr>
+					<td>onAnyTargetChecked</td>
+					<td>function</td>
+					<td>function (count){}</td>
+					<td>Callback which is fired when more then zero target elements are checked</td>
+				</tr>
+				<tr>
+					<td>onNoTargetChecked</td>
+					<td>function</td>
+					<td>function (){}</td>
+					<td>Callback which is fired when no target elements are checked</td>
+				</tr>
+				<tr>
+					<td>onTargetClick</td>
+					<td>function</td>
+					<td>function (target){}</td>
+					<td>Callback which is fired when target element is clicked</td>
+				</tr>
+				<tr>
+					<td>onElementClick</td>
+					<td>function</td>
+					<td>function (elem){}</td>
+					<td>Callback which is fired when element is clicked</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Examples</h1>
+
+		</div>
+	</div>
+
+	<!-- BASIC USAGE START -->
+	<div class="row">
+		<div class="col-xs-12">
+			<h2>Basic usage</h2>
+		</div>
+
+		<div class="col-xs-6">
+			<div data-example-id="togglable-tabs" class="bs-example bs-example-tabs">
+				<ul role="tablist" class="nav nav-tabs" id="myTabs">
+					<li class="active" role="presentation">
+						<a aria-expanded="true" aria-controls="home"
+							data-toggle="tab" role="tab" id="home-tab" href="#home">
+							JavaScript
+						</a>
+					</li>
+					<li role="presentation" class="">
+						<a aria-controls="profile" data-toggle="tab" id="profile-tab"
+							role="tab" href="#profile" aria-expanded="false">
+						HTML
+					</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+					<div aria-labelledby="home-tab" id="home" class="tab-pane fade active in" role="tabpanel">
+						<pre>
+<code><span class="p">$</span>( <span class="b">"#element"</span> ).<span class="g">checkall</span>({
+	<span class="p">target</span>: <span class="b">".checkme"</span>
+})<span class="o">;</span></code>
+						</pre>
+					</div>
+					<div aria-labelledby="profile-tab" id="profile" class="tab-pane fade" role="tabpanel">
+						<pre>
+<code><span class="g">&lt;table&gt;</span>
+	<span class="g">&lt;tr&gt;</span>
+		<span class="g">&lt;th&gt;</span><span class="g">&lt;input</span> type=<span class="b">&quot;checkbox&quot;</span> id=<span class="b">&quot;element&quot;</span> <span class="g">/&gt;</span><span class="g">&lt;/th&gt;</span>
+		<span class="g">&lt;th&gt;</span>Column #1<span class="g">&lt;/th&gt;</span>
+		<span class="g">&lt;th&gt;</span>Column #2<span class="g">&lt;/th&gt;</span>
+	<span class="g">&lt;/tr&gt;</span>
+	<span class="g">&lt;tr&gt;</span>
+		<span class="g">&lt;td&gt;</span><span class="g">&lt;input</span> type=<span class="b">&quot;checkbox&quot;</span> class=<span class="b">&quot;checkme&quot;</span> <span class="g">/&gt;</span><span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+	<span class="g">&lt;/tr&gt;</span>
+	<span class="g">&lt;tr&gt;</span>
+		<span class="g">&lt;td&gt;</span><span class="g">&lt;input</span> type=<span class="b">&quot;checkbox&quot;</span> class=<span class="b">&quot;checkme&quot;</span> <span class="g">/&gt;</span><span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+	<span class="g">&lt;/tr&gt;</span>
+<span class="g">&lt;/table&gt;</span></code>
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-6">
+			<table class="table table-bordered">
+				<tr>
+					<th style="width: 5%;"><input type="checkbox" id="element" /></th>
+					<th>Column #1</th>
+					<th>Column #2</th>
+				</tr>
+				<tr>
+					<td><input type="checkbox" class="checkme" /></td>
+					<td>Sample</td>
+					<td>Sample</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" class="checkme" /></td>
+					<td>Sample</td>
+					<td>Sample</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- BASIC USAGE END -->
+
+	<!-- UNIFORM USAGE START -->
+	<div class="row">
+		<div class="col-xs-12">
+			<h2>Uniform usage</h2>
+		</div>
+
+		<div class="col-xs-6">
+			<table class="table table-bordered">
+				<tr>
+					<th style="width: 5%;"><input type="checkbox" id="element-uniform" /></th>
+					<th>Column #1</th>
+					<th>Column #2</th>
+				</tr>
+				<tr>
+					<td><input type="checkbox" class="checkme-uniform" /></td>
+					<td>Sample</td>
+					<td>Sample</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" class="checkme-uniform" /></td>
+					<td>Sample</td>
+					<td>Sample</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-xs-6">
+			<div data-example-id="togglable-tabs" class="bs-example bs-example-tabs">
+				<ul role="tablist" class="nav nav-tabs" id="myTabs-uniform">
+					<li class="active" role="presentation">
+						<a aria-expanded="true" aria-controls="home-uniform"
+						   data-toggle="tab" role="tab" id="home-tab-uniform" href="#home-uniform">
+							JavaScript
+						</a>
+					</li>
+					<li role="presentation" class="">
+						<a aria-controls="profile-uniform" data-toggle="tab" id="profile-tab-uniform"
+						   role="tab" href="#profile-uniform" aria-expanded="false">
+							HTML
+						</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="uniformUsage">
+					<div aria-labelledby="home-tab" id="home-uniform" class="tab-pane fade active in" role="tabpanel">
+						<pre>
+<code><span class="p">$</span>( <span class="b">"#element-uniform"</span> ).<span class="g">checkall</span>({
+	<span class="p">target</span>: <span class="b">".checkme-uniform"</span>,
+	<span class="p">uniform</span>: <span class="o">true</span>
+})<span class="o">;</span></code>
+						</pre>
+					</div>
+					<div aria-labelledby="profile-tab" id="profile-uniform" class="tab-pane fade" role="tabpanel">
+						<pre>
+<code><span class="g">&lt;table&gt;</span>
+	<span class="g">&lt;tr&gt;</span>
+		<span class="g">&lt;th&gt;</span><span class="g">&lt;input</span> type=<span class="b">&quot;checkbox&quot;</span> id=<span class="b">&quot;element-uniform&quot;</span> <span class="g">/&gt;</span><span class="g">&lt;/th&gt;</span>
+		<span class="g">&lt;th&gt;</span>Column #1<span class="g">&lt;/th&gt;</span>
+		<span class="g">&lt;th&gt;</span>Column #2<span class="g">&lt;/th&gt;</span>
+	<span class="g">&lt;/tr&gt;</span>
+	<span class="g">&lt;tr&gt;</span>
+		<span class="g">&lt;td&gt;</span><span class="g">&lt;input</span> type=<span class="b">&quot;checkbox&quot;</span> class=<span class="b">&quot;checkme-uniform&quot;</span> <span class="g">/&gt;</span><span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+	<span class="g">&lt;/tr&gt;</span>
+	<span class="g">&lt;tr&gt;</span>
+		<span class="g">&lt;td&gt;</span><span class="g">&lt;input</span> type=<span class="b">&quot;checkbox&quot;</span> class=<span class="b">&quot;checkme-uniform&quot;</span> <span class="g">/&gt;</span><span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+	<span class="g">&lt;/tr&gt;</span>
+<span class="g">&lt;/table&gt;</span></code>
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- UNIFORM USAGE END -->
+
+	<!-- ICHECK USAGE START -->
+	<div class="row">
+		<div class="col-xs-12">
+			<h2>iCheck usage</h2>
+		</div>
+
+		<div class="col-xs-6">
+			<div data-example-id="togglable-tabs" class="bs-example bs-example-tabs">
+				<ul role="tablist" class="nav nav-tabs" id="myTabs-icheck">
+					<li class="active" role="presentation">
+						<a aria-expanded="true" aria-controls="home-icheck"
+						   data-toggle="tab" role="tab" id="home-tab-icheck" href="#home-icheck">
+							JavaScript
+						</a>
+					</li>
+					<li role="presentation" class="">
+						<a aria-controls="profile-icheck" data-toggle="tab" id="profile-tab-icheck"
+						   role="tab" href="#profile-icheck" aria-expanded="false">
+							HTML
+						</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="myTabContent-icheck">
+					<div aria-labelledby="home-tab-icheck" id="home-icheck" class="tab-pane fade active in" role="tabpanel">
+						<pre>
+<code><span class="p">$</span>( <span class="b">"#element-icheck"</span> ).<span class="g">checkall</span>({
+	<span class="p">target</span>: <span class="b">".checkme-icheck"</span>,
+	<span class="p">icheck</span>: <span class="o">true</span>
+})<span class="o">;</span></code>
+						</pre>
+					</div>
+					<div aria-labelledby="profile-tab-icheck" id="profile-icheck" class="tab-pane fade" role="tabpanel">
+						<pre>
+<code><span class="g">&lt;table&gt;</span>
+	<span class="g">&lt;tr&gt;</span>
+		<span class="g">&lt;th&gt;</span><span class="g">&lt;input</span> type=<span class="b">&quot;checkbox&quot;</span> id=<span class="b">&quot;element-icheck&quot;</span> <span class="g">/&gt;</span><span class="g">&lt;/th&gt;</span>
+		<span class="g">&lt;th&gt;</span>Column #1<span class="g">&lt;/th&gt;</span>
+		<span class="g">&lt;th&gt;</span>Column #2<span class="g">&lt;/th&gt;</span>
+	<span class="g">&lt;/tr&gt;</span>
+	<span class="g">&lt;tr&gt;</span>
+		<span class="g">&lt;td&gt;</span><span class="g">&lt;input</span> type=<span class="b">&quot;checkbox&quot;</span> class=<span class="b">&quot;checkme-icheck&quot;</span> <span class="g">/&gt;</span><span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+	<span class="g">&lt;/tr&gt;</span>
+	<span class="g">&lt;tr&gt;</span>
+		<span class="g">&lt;td&gt;</span><span class="g">&lt;input</span> type=<span class="b">&quot;checkbox&quot;</span> class=<span class="b">&quot;checkme-icheck&quot;</span> <span class="g">/&gt;</span><span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+		<span class="g">&lt;td&gt;</span>Sample<span class="g">&lt;/td&gt;</span>
+	<span class="g">&lt;/tr&gt;</span>
+<span class="g">&lt;/table&gt;</span></code>
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-6">
+			<table class="table table-bordered">
+				<tr>
+					<th style="width: 5%;"><input type="checkbox" id="element-icheck" /></th>
+					<th>Column #1</th>
+					<th>Column #2</th>
+				</tr>
+				<tr>
+					<td><input type="checkbox" class="checkme-icheck" /></td>
+					<td>Sample</td>
+					<td>Sample</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" class="checkme-icheck" /></td>
+					<td>Sample</td>
+					<td>Sample</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- ICHECK USAGE END -->
+
+	<div class="row">
+		<div class="col-xs-12">
+			<p class="text-center margin-50">jQuery checkAll plugin is released under the <a href="https://en.wikipedia.org/wiki/MIT_License" target="_blank">MIT License</a>. Feel free to use it in personal and commercial projects.</p>
+		</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/jquery.uniform.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
+<script src="js/jquery.checkall.min.js"></script>
+<script type="text/javascript">
+	$( "#element" ).checkall({
+		target: ".checkme"
+	});
+
+	$("#element-uniform, .checkme-uniform").uniform();
+	$( "#element-uniform" ).checkall({
+		target: ".checkme-uniform",
+		uniform: true
+	});
+
+	$("#element-icheck, .checkme-icheck").iCheck({
+		checkboxClass: 'icheckbox_square-blue',
+		radioClass: 'iradio_square-blue'
+	});
+	$( "#element-icheck" ).checkall({
+		target: ".checkme-uniform",
+		icheck: true
+	});
+</script>
+</body>
+</html>
