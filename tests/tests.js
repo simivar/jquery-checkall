@@ -1,8 +1,8 @@
-var $checked = $("#checked"),
-	$unchecked = $("#unchecked"),
-	$controller = $( "#controller" ),
-	$testInputOne = $( ".checkme1" ),
-	$testInputTwo = $( ".checkme2" );
+var $checked = $( "#checked" ),
+		$unchecked = $( "#unchecked" ),
+		$controller = $( "#controller" ),
+		$testInputOne = $( ".checkme1" ),
+		$testInputTwo = $( ".checkme2" );
 
 QUnit.test( ".check() get value", function( assert ) {
 	assert.expect( 2 );
@@ -49,8 +49,8 @@ QUnit.test( "Uncheck all targets with controller", function( assert ) {
 	assert.expect( 2 );
 
 	var $controller = $( "#controller" ),
-		$testInputOne = $( ".checkme1" ),
-		$testInputTwo = $( ".checkme2" );
+			$testInputOne = $( ".checkme1" ),
+			$testInputTwo = $( ".checkme2" );
 
 	$controller.trigger( "click" );
 
@@ -81,5 +81,32 @@ QUnit.test( "Uncheck controller with target", function( assert ) {
 
 	if( $controller.check() === false ){
 		assert.ok(true, "unchecked controller with first target");
+	}
+});
+
+QUnit.test( "UniformJS: check all targets with controller", function( assert ) {
+	assert.expect( 1 );
+
+	var $controllerUniform = $( "#controller-uniform"),
+			$testInputOneUniform = $( ".checkme-uniform" );
+
+	$controllerUniform.trigger( "click" );
+
+	if( $testInputOneUniform.parent().hasClass("checked") === $testInputOneUniform.check() ){
+		assert.ok(true, "Uniform controller checked targets");
+	}
+});
+
+
+QUnit.test( "iCheck: check all targets with controller", function( assert ) {
+	assert.expect( 1 );
+
+	var $controllerICheck = $( "#controller-icheck"),
+			$testInputOneICheck = $( ".checkme-icheck" );
+
+	$controllerICheck.trigger( "click" );
+
+	if( $testInputOneICheck.parent().hasClass("checked") === $testInputOneICheck.check() ){
+		assert.ok(true, "iCheck controller checked targets");
 	}
 });

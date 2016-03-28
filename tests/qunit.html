@@ -3,13 +3,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>QUnit jQuery checkAll tests</title>
+	<title>QUnit Example</title>
 	<link rel="stylesheet" href="../node_modules/qunitjs/qunit/qunit.css">
+	<link rel="stylesheet" href="../node_modules/uniform-js/themes/default/css/uniform.default.css">
+	<link rel="stylesheet" href="../node_modules/icheck/skins/square/blue.css">
 </head>
 <body>
 <div id="qunit"></div>
 <div id="qunit-fixture"></div>
 
+<!-- STANDARD USAGE -->
 <input type="checkbox" id="checked" checked />
 <input type="checkbox" id="unchecked" />
 
@@ -17,14 +20,39 @@
 <input type="checkbox" class="checkme checkme1" />
 <input type="checkbox" class="checkme checkme2" />
 
-<script src="../node_modules/jquery/dist/jquery.js"></script>
+<!-- UNIFORMJS USAGE -->
+<input type="checkbox" id="controller-uniform" />
+<input type="checkbox" class="checkme-uniform" />
+
+<!-- ICHECK USAGE -->
+<input type="checkbox" id="controller-icheck" />
+<input type="checkbox" class="checkme-icheck" />
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>s
 <script src="../node_modules/qunitjs/qunit/qunit.js"></script>
+<script src="../node_modules/uniform-js/jquery.uniform.js"></script>
+<script src="../node_modules/icheck/icheck.js"></script>
 <script src="../src/jquery-checkall.js"></script>
 <script src="tests.js"></script>
 <script>
 	(function($) {
 		$("#controller").checkall({
 			target: '.checkme'
+		});
+
+		$("#controller-uniform, .checkme-uniform").uniform();
+		$( "#controller-uniform" ).checkall({
+			target: ".checkme-uniform",
+			uniform: true
+		});
+
+		$("#controller-icheck, .checkme-icheck").iCheck({
+			checkboxClass: 'icheckbox_square-blue',
+			radioClass: 'iradio_square-blue'
+		});
+		$( "#controller-icheck" ).checkall({
+			target: ".checkme-icheck",
+			icheck: true
 		});
 	})(jQuery);
 </script>

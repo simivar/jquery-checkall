@@ -41,7 +41,9 @@
     "grunt-contrib-qunit": "^0.7.0",
     "jquery": "^2.1.4",
     "load-grunt-tasks": "~3.1.0",
-    "qunitjs": "^1.23.0"
+    "qunitjs": "^1.23.0",
+    "icheck": "^1.0.2",
+    "uniform-js": "^2.1.2"
   },
   "dependencies": {
     "jquery": ">1.7.0"
