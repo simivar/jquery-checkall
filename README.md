@@ -4,6 +4,11 @@ One checkbox to rule them all - simple jQuery plugin to check all the checkboxes
 # docs
 [http://simivar.github.io/jquery-checkall/](http://simivar.github.io/jquery-checkall/)
 
+# installation
+* download [latest release](https://github.com/simivar/jquery-checkall/releases) from GitHub
+* `npm install jquery-checkall`
+* `bower install jquery-checkall`
+
 # dependencies
 * jQuery >= 1.7
 
