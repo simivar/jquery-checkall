@@ -12,7 +12,7 @@
       "url": "http://www.opensource.org/licenses/mit-license.php"
     }
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/jquery.checkall.js",
   "author": {
     "name": "simivar",
