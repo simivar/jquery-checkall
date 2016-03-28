@@ -1,3 +1,11 @@
+/** File generated -- do not modify
+ *  JQUERY-CHECKALL
+ *
+ *  @version 0.0.2
+ *  @website http://simivar.github.io/jquery-checkall/
+ *  @author simivar
+ *  @license 
+ */
 (function ($)
 {
 	"use strict";
