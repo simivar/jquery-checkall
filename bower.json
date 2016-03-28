@@ -1,0 +1,29 @@
+{
+  "name": "jquery-checkall",
+  "description": "One checkbox to rule them all - simple jQuery plugin to check all the checkboxes",
+  "main": "dist/jquery.checkall.js",
+  "authors": [
+    "simivar"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "checkbox",
+    "check",
+    "all",
+    "check"
+  ],
+  "homepage": "https://github.com/simivar/jquery-checkall",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7.0"
+  }
+}
