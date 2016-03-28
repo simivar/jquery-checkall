@@ -1,7 +1,7 @@
 /** File generated -- do not modify
  *  JQUERY-CHECKALL
  *
- *  @version 0.0.2
+ *  @version 0.0.3
  *  @website http://simivar.github.io/jquery-checkall/
  *  @author simivar
  *  @license 
