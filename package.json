@@ -24,7 +24,7 @@
     "url": "https://github.com/simivar/jquery-checkall.git"
   },
   "bugs": {
-    "url": "https://github.com/victorjonsson/jQuery-Form-Validator/issues"
+    "url": "https://github.com/simivar/jquery-checkall/issues"
   },
   "peerDependencies": {
     "jquery": "*"
