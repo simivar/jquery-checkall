@@ -1,4 +1,4 @@
-# jquery-checkall [![Build Status](https://travis-ci.org/simivar/jquery-checkall.svg?branch=master)](https://travis-ci.org/simivar/jquery-checkall)
+# jquery-checkall [![Build Status](https://travis-ci.org/simivar/jquery-checkall.svg?branch=master)](https://travis-ci.org/simivar/jquery-checkall) [![Dependency Status](https://beta.gemnasium.com/badges/github.com/simivar/jquery-checkall.svg)](https://beta.gemnasium.com/projects/github.com/simivar/jquery-checkall)
 One checkbox to rule them all - simple and lightweight (1.39 KB) jQuery plugin to check all the checkboxes
 
 # docs
